@@ -1,0 +1,79 @@
+// Blueprint for system/netd (framework extractive)
+// Staged from Extractive APEX package: org.blisslabs.ag.ext.netd.framework
+
+package {
+    default_applicable_licenses: ["system_netd_license"],
+}
+
+license {
+    name: "system_netd_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-Apache-2.0",
+    ],
+    license_text: [
+        "NOTICE",
+    ],
+}
+
+cc_library_headers {
+    name: "libnetd_client_headers",
+    export_include_dirs: ["include"],
+    apex_available: [
+        "//apex_available:platform",
+    ],
+}
+
+cc_library_headers {
+    name: "libnetdbinder_utils_headers",
+    export_include_dirs: ["include/binder_utils"],
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.resolv",
+    ],
+    min_sdk_version: "29",
+}
+
+cc_library_headers {
+    name: "netd_mainline_headers",
+    export_include_dirs: ["include/mainline"],
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.tethering",
+    ],
+    sdk_version: "29",
+    min_sdk_version: "29",
+}
+
+cc_defaults {
+    name: "netd_defaults",
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Werror=implicit-fallthrough",
+        "-Werror=sometimes-uninitialized",
+        "-Werror=conditional-uninitialized",
+        "-Wnullable-to-nonnull-conversion",
+        "-Wsign-compare",
+        "-Wthread-safety",
+        "-Wunused-parameter",
+        "-Wuninitialized",
+    ],
+    tidy: true,
+    cpp_std: "experimental",
+}
+
+cc_prebuilt_library_shared {
+    name: "libnetd_client",
+    srcs: ["lib64/libnetd_client.so"],
+    export_include_dirs: ["include"],
+    apex_available: [
+        "//apex_available:platform",
+    ],
+}
+
+cc_prebuilt_library_static {
+    name: "libnetd_client_static",
+    srcs: ["lib64/libnetd_client.a"],
+    export_include_dirs: ["include"],
+}

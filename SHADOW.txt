@@ -1,0 +1,5 @@
+upstream_repo: system/netd
+framework_extractive: true
+package: org.blisslabs.ag.ext.netd.framework
+source: https://github.com/LineageOS-TV-x86/android_system_netd
+build_type: extractive_apex

@@ -1,0 +1,16 @@
+{
+	"provideLibs": [	
+		    "libdummy_binary_libnetd-client.a-x86_64-v2.so",
+		    "libdummy_binary_libnetd-client.a.so",
+		    "libdummy_ext_netd_framework-x86_64-v2.so",
+		    "libdummy_ext_netd_framework.so",
+		    "libdummy_headers_ext_netd_framework-x86_64-v2.so",
+		    "libdummy_headers_ext_netd_framework.so",
+		    "libnetd_client-x86_64-v2.so",
+		    "libnetd_client.so"
+	],
+	"requireLibs": [	
+		    "libbase.so"
+	],
+	"visible": true
+}
