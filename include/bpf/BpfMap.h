@@ -17,6 +17,7 @@
 #pragma once
 
 #include <linux/bpf.h>
+#include <functional>
 
 #include <android-base/result.h>
 #include <android-base/stringprintf.h>
