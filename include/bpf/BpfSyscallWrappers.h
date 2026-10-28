@@ -15,6 +15,8 @@
  */
 
 #pragma once
+#ifndef BPF_SYSCALL_WRAPPERS_H
+#define BPF_SYSCALL_WRAPPERS_H
 
 #include <linux/bpf.h>
 #include <linux/unistd.h>
@@ -203,3 +205,4 @@ DEFINE_BPF_GET_FD_INFO(MapFlags, map_flags)      // int bpfGetFdMapFlags(const B
 #undef BPF_FD_TO_U32
 #undef BPF_FD_TYPE
 #undef BPF_FD_JUST_USE_INT
+#endif // BPF_SYSCALL_WRAPPERS_H
